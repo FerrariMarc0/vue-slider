@@ -14,10 +14,18 @@
 
     <div id="app" v-cloak>
         <div class="container">
+            <div class="flyer">
+                <h2>{{movie[0].title}}</h2>
+                <p>{{movie[0].text}}</p>
+            </div>
+            
             <div class="slider">
-                <img :src="heroesImg.images[active]" alt="Spiderman"/>
+                <img @mouseover="mouseOver" @mouseleave="mouseLeave" :src="heroesImg.images[active]" alt="Spiderman"/>
+                
                 <div class="right_slide">
-                    <div class="little_pic light"><img v-for="img in heroesImg.images" :src="img" alt="img"></div>
+                    <div class="little_pic light">
+                        <img v-for="(img, i) in heroesImg.images" :src="img" alt="img" @click="selThumb(i, event)">
+                    </div>
                 </div>
 
                 <!--BUTTON-SECTION-->

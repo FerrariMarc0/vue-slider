@@ -5,6 +5,7 @@ const { createApp } = Vue
 createApp({
     data() {
     return {
+        
         movie: [
         {
             title: 'Marvel\'s Spiderman Miles Morale',
@@ -28,8 +29,8 @@ createApp({
         }
     ],
     active: 0,
-        heroesImg: {
-        images: ['img/01.webp', 'img/02.webp', 'img/03.webp', 'img/04.webp', 'img/05.webp']
+    heroesImg: {
+    images: ['img/01.webp', 'img/02.webp', 'img/03.webp', 'img/04.webp', 'img/05.webp']
     }
 
     }
@@ -46,6 +47,23 @@ createApp({
             if(this.active < 0){
                 this.active= this.heroesImg.images.length -1;
             }
+        },
+        selThumb(i, event){
+            this.active= i;
+        },
+        mouseLeave: function(){
+            this.interval=setInterval(() => {
+                this.active++
+                if(this.active > this.heroesImg.images.length -1){
+                    this.active= 0;
+                }
+            }, 2500)
+        },
+        mouseOver: function(){
+            console.log('yeah')
+            clearInterval(this.interval)
         }
+    },
+    mounted(mouseLeave){
     }
 }).mount('#app')

@@ -86,7 +86,17 @@ i{
     color: #ffffff;
     text-align: center;
 }
-
+h2{
+    margin-bottom: 10px;
+}
+.flyer{
+    background-color: rgba(50, 0, 0, 0.5);
+    color: #ffffff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+    padding: 10px;
+}
 
 [v-cloak]{
     display: none;
