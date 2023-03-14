@@ -5,7 +5,7 @@
 * quando il mouse va in hover sullo slider, bloccare l’autoplay e farlo riprendere quando esce
 
 // Creo un vettore di oggetti con all'interno testo e titolo
-// Creo un'altro vettore contenente solo le immagini di copertina
+// Creo un altro vettore contenente solo le immagini di copertina
 // collego le immagini in html con un ciclo (v)for
 // inizializzo una funzione per ciascun bottone e la collego al corrispettivo evento
 // creo una condizione per far si che lo slider non si interrompa 
