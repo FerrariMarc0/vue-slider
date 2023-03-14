@@ -35,35 +35,43 @@ createApp({
 
     }
     },
+    /* MY FUNCTIONS */
     methods: {
         next(){
             this.active++;
-            if(this.active > this.heroesImg.images.length -1){
+            if(this.active > this.heroesImg.images.length -1){  /* increase button  */
                 this.active= 0;
             }
         },
         prev(){
             this.active--;
             if(this.active < 0){
-                this.active= this.heroesImg.images.length -1;
+                this.active= this.heroesImg.images.length -1;   /* decrease button  */
             }
         },
         selThumb(i, event){
-            this.active= i;
+            this.active= i;    /* select and show thumbnail  */
         },
         mouseLeave: function(){
             this.interval=setInterval(() => {
                 this.active++
-                if(this.active > this.heroesImg.images.length -1){
+                if(this.active > this.heroesImg.images.length -1){ /* autoplay sliding */
                     this.active= 0;
                 }
             }, 2500)
         },
         mouseOver: function(){
             console.log('yeah')
-            clearInterval(this.interval)
+            clearInterval(this.interval)   /* stop autoplay */
         }
+        /* /MY FUNCTIONS */
     },
-    mounted(mouseLeave){
+    mounted(){   /* sync */
+        this.interval=setInterval(() => {
+        this.active++
+        if(this.active > this.heroesImg.images.length -1){ /* autoplay sliding */
+            this.active= 0;
+        }
+    }, 2500)
     }
 }).mount('#app')
